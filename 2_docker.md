@@ -193,7 +193,7 @@ services:
       POSTGRES_DB: "test_db"
       PGDATA: "/var/lib/postgresql/data"
     volumes:
-      - pg-data:/var/lib/postgres
+      - /var/lib/postgres:/var/lib/posttgresql/data
   
   postgres-client:
     build:
@@ -204,8 +204,6 @@ services:
     tty: true
     stdin_open: true
     
-volumes:
-  pg-data:
 ```
 Построение образов и запуск контейнеров:
 ```
